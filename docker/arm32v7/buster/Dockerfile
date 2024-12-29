@@ -21,6 +21,7 @@ RUN apt-get update && \
         make \
         netbase \
         openssh-client \
+		nodejs \
         xz-utils \
         zlib1g-dev \
 		libnuma-dev libgmp10 libssl-dev liblzma-dev libbz2-dev wget lsb-release software-properties-common apt-transport-https gcc autoconf automake build-essential gzip patchelf tree \

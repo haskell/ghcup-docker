@@ -20,6 +20,7 @@ RUN apt-get update && \
         libgmp-dev \
         make \
         netbase \
+		nodejs \
         openssh-client \
         xz-utils \
         zlib1g-dev \

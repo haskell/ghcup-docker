@@ -21,7 +21,8 @@ RUN apk add --no-cache \
             diffutils \
             git \
 			gzip \
-			gnupg && \
+			gnupg \
+			nodejs && \
     apk add --no-cache \
             zlib \
             zlib-dev \
