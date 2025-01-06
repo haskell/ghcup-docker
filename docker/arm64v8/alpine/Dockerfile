@@ -44,12 +44,12 @@ ARG GPG_KEY="7D1E8AFD1D4A16D71FADA2F2CCC85C0E40C06A8C FFEB7CE81E16A36B3E2DED6F2D
 
 # install ghcup
 RUN gpg --batch --keyserver keys.openpgp.org --recv-keys $GPG_KEY && \
-    curl -sSfL -O https://downloads.haskell.org/~ghcup/$GHCUP_VERSION/aarch64-linux-static-ghcup-$GHCUP_VERSION && \
+    curl -sSfL -O https://downloads.haskell.org/~ghcup/$GHCUP_VERSION/aarch64-linux-ghcup-$GHCUP_VERSION && \
     curl -sSfL -O https://downloads.haskell.org/~ghcup/$GHCUP_VERSION/SHA256SUMS && \
     curl -sSfL -O https://downloads.haskell.org/~ghcup/$GHCUP_VERSION/SHA256SUMS.sig && \
     gpg --verify SHA256SUMS.sig SHA256SUMS && \
     sha256sum -c --ignore-missing SHA256SUMS && \
-    mv aarch64-linux-static-ghcup-$GHCUP_VERSION /usr/bin/ghcup && \
+    mv aarch64-linux-ghcup-$GHCUP_VERSION /usr/bin/ghcup && \
     chmod +x /usr/bin/ghcup && \
     rm -rf SHA256SUMS SHA256SUMS.sig ~/.gnupg/public-keys.d/pubring.db.lock
 
