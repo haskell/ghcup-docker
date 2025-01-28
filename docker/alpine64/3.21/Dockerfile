@@ -21,8 +21,8 @@ RUN apk add --no-cache \
             diffutils \
             git \
 			gzip \
-		    nodejs \
-			gnupg && \
+			gnupg \
+			nodejs && \
     apk add --no-cache \
             zlib \
             zlib-dev \
@@ -44,17 +44,18 @@ ARG GPG_KEY="7D1E8AFD1D4A16D71FADA2F2CCC85C0E40C06A8C FFEB7CE81E16A36B3E2DED6F2D
 
 # install ghcup
 RUN gpg --batch --keyserver keys.openpgp.org --recv-keys $GPG_KEY && \
-    curl -sSfL -O https://downloads.haskell.org/~ghcup/$GHCUP_VERSION/aarch64-linux-ghcup-$GHCUP_VERSION && \
+    curl -sSfL -O https://downloads.haskell.org/~ghcup/$GHCUP_VERSION/x86_64-linux-ghcup-$GHCUP_VERSION && \
     curl -sSfL -O https://downloads.haskell.org/~ghcup/$GHCUP_VERSION/SHA256SUMS && \
     curl -sSfL -O https://downloads.haskell.org/~ghcup/$GHCUP_VERSION/SHA256SUMS.sig && \
     gpg --verify SHA256SUMS.sig SHA256SUMS && \
     sha256sum -c --ignore-missing SHA256SUMS && \
-    mv aarch64-linux-ghcup-$GHCUP_VERSION /usr/bin/ghcup && \
+    mv x86_64-linux-ghcup-$GHCUP_VERSION /usr/bin/ghcup && \
     chmod +x /usr/bin/ghcup && \
     rm -rf SHA256SUMS SHA256SUMS.sig ~/.gnupg/public-keys.d/pubring.db.lock
 
-ARG GHC=9.8.4
-ARG CABAL_INSTALL=3.12.1.0
+ARG GHC=9.4.8
+ARG CABAL_INSTALL=3.10.2.0
+ARG STACK=2.13.1
 
 ENV GHCUP_CURL_OPTS="--silent"
 ENV NO_COLOR=1
