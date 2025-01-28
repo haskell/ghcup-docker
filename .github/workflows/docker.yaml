@@ -89,7 +89,7 @@ jobs:
         with:
           context: ./docker/arm64v8/alpine
           push: true
-          tags: hasufell/arm64v8-alpine-haskell:3.20
+          tags: hasufell/arm64v8-alpine-haskell:3.21
           platforms: linux/arm64
 
       - name: Build and push (debian buster)
