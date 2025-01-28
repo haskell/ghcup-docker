@@ -107,3 +107,11 @@ jobs:
           push: true
           tags: hasufell/arm64v8-ubuntu-haskell:focal
           platforms: linux/arm64
+
+      - name: Build and push (rockylinux:8)
+        uses: docker/build-push-action@v3
+        with:
+          context: ./docker/arm64v8/rocky/8
+          push: true
+          tags: hasufell/arm64v8-rockylinux-haskell:8
+          platforms: linux/arm64
