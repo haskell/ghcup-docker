@@ -36,6 +36,7 @@ RUN apk add --no-cache \
             openssl-libs-static \
             xz \
             xz-dev \
+            xz-static \
             ncurses-static
 
 ARG GHCUP_VERSION=0.1.40.0
