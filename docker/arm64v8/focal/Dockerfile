@@ -44,9 +44,8 @@ RUN gpg --batch --keyserver keys.openpgp.org --recv-keys $GPG_KEY && \
     chmod +x /usr/bin/ghcup && \
     rm -rf SHA256SUMS SHA256SUMS.sig
 
-ARG GHC=8.10.7
-ARG CABAL_INSTALL=3.6.2.0
-ARG STACK=2.9.1
+ARG GHC=9.6.7
+ARG CABAL_INSTALL=3.12.1.0
 
 ENV GHCUP_CURL_OPTS="--silent"
 ENV NO_COLOR=1

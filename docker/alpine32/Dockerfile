@@ -53,9 +53,9 @@ RUN gpg --batch --keyserver keys.openpgp.org --recv-keys $GPG_KEY && \
     chmod +x /usr/bin/ghcup && \
     rm -rf SHA256SUMS SHA256SUMS.sig ~/.gnupg/public-keys.d/pubring.db.lock
 
-ARG GHC=9.4.8
-ARG CABAL_INSTALL=3.10.2.0
-ARG STACK=2.13.1
+ARG GHC=9.6.7
+ARG CABAL_INSTALL=3.12.1.0
+ARG STACK=3.7.1
 
 ENV GHCUP_CURL_OPTS="--silent"
 ENV NO_COLOR=1
