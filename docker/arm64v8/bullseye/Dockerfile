@@ -1,4 +1,4 @@
-FROM arm64v8/debian:10
+FROM arm64v8/debian:11
 
 ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive

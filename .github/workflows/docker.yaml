@@ -92,12 +92,12 @@ jobs:
           tags: hasufell/arm64v8-alpine-haskell:3.21
           platforms: linux/arm64
 
-      - name: Build and push (debian buster)
+      - name: Build and push (debian bullseye)
         uses: docker/build-push-action@v3
         with:
-          context: ./docker/arm64v8/buster
+          context: ./docker/arm64v8/bullseye
           push: true
-          tags: hasufell/arm64v8-debian-haskell:10
+          tags: hasufell/arm64v8-debian-haskell:11
           platforms: linux/arm64
 
       - name: Build and push (ubuntu focal)
